@@ -1,0 +1,28 @@
+{% extends 'base.djhtml' %}
+{% load offer_tags %}
+
+{% block title %} Self-Other Game : Choice time! {% endblock title %}
+
+{% block content %}
+
+<div class="span-14 prepend-3 last">
+  <p class="meta">
+    Based on your choices in our demo-game, we estimated your indifference point, 
+    which represents how many units of money we would have to give to a stranger 
+    for it to be worth one unit of money to you. In this plot, your Indifference 
+    Point (IP) is our best estimate of how much an anonymous stranger receiving a 
+    dollar is worth to you, in dollars. Of course, this estimate is only for 
+    demonstration purposes.
+
+  </p>
+  <p class="meta">
+    <img src="{% url offers.views.plot_logistic_png %}" alt="Choice by LogRatio Logisitc Plot" height="480" width="640"/>
+  </p>
+  <p class="meta">
+    Thanks for trying out our game; we hope you got a feel for what we are 
+    doing. If you have any questions or comments, please <a href="http://brainimaging.waisman.wisc.edu/~fox/publications/foxAS_CNS_2011_reprint.pdf">check out our poster</a> or contact Andrew Fox
+    &lt;<a href="mailto:asfox@wisc.edu">asfox@wisc.edu</a>&gt;. 
+  </p>
+</div>
+
+{% endblock content %}

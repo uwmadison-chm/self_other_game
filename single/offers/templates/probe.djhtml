@@ -1,0 +1,64 @@
+{% extends 'base.djhtml' %}
+{% load offer_tags %}
+
+{% block content %}
+<div id = "probe" class="span-14 prepend-5 last">
+  {% result_button probe.choice 1 %}
+  {% result_button probe.choice  %}
+
+  <p id="result_text">{% result_text probe.choice %}</p>
+  
+  <form id="response_form" class="disabled" method="post" action="{% url offers.views.probe %}">
+    {% for response in probe.response_set.all %}
+      <div class="question" id="q{{response.question_id}}">
+        <p>{{ response.question.question_text|safe}}</p>
+        <div id="slider_{{response.question_id}}" class="slider">
+          <div class="railend_left"></div>
+          <div class="rail_middle"></div>
+          <div class="railend_right"></div>
+          <div class="handle"></div>
+        </div>
+        <div id="labelset_{{response.question_id}}" class="labelset">
+        </div>
+        <input type="hidden" id="rating_{{response.question_id}}" name="rating_{{response.question_id}}" value="{{response.rating}}"/>
+      </div>
+    {% endfor %}
+    <div style="clear:both">
+      <input type="hidden" name ="timings" id="timings" value = ""/>
+      <button type="submit" disabled="disabled">Save response</button>
+    </div>
+  </form>
+  <script type="text/javascript">
+    var sliders = [];
+    {% for response in probe.response_set.all %}
+      sliders.push(Revealer.createBoundLabeledSlider(
+        'slider_{{response.question_id}}', 'rating_{{response.question_id}}', 
+        'labelset_{{response.question_id}}', 
+        ['Very unhappy', '', 'Very happy'], {disabled:true}));
+    {% endfor %}
+
+    var sched = Reveal.scheduler('probe', 'timings');
+    
+    sched.add(2000, 'reveal_amounts', function() {
+      Revealer.Actions.reveal($$('.chooser strong'));
+    });
+    
+    sched.add(4000, 'reveal_choice', function() {
+      Revealer.Actions.reveal($$('#notchosen, #chosen, #result_text'));
+    });
+    
+    sched.add(6000, 'activate_controls', function() {
+      $('response_form').removeClassName('disabled');
+      sliders.invoke('setEnabled', true);
+      $$('#response_form input, #response_form button').invoke(
+        'removeAttribute', 'disabled'
+      );
+    });
+
+    Event.addBehavior({
+      '.handle:mouseup' : function(e) {this.removeClassName('selected')},
+      'html' : sched.run
+    });
+  </script>
+</div>
+{% endblock content %}

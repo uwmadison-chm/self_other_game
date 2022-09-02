@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Subjects for session {{session}}</title>
+    
+    <style type="text/css">
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    #subjects {
+      list-style: none;
+      font-size: 110%;
+      float: left;
+    }
+    
+    #subjects li {
+      padding: .5em;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #subjects p {
+      font-size: 65%;
+    }
+    </style>
+  </head>
+  
+  <body>
+    <table>
+      {% for subject in subjects %}
+      <tr>
+      <td width="33%">
+      <ul id="subjects">
+        <li>Subject ID: {{subject}}
+        <p>Keep this and return it to the experimenter at the end of the task.</p>
+      </ul>
+      </td>
+      <td width="67%">
+        <ul id="subjects">
+        <li>Subject ID: {{subject}}
+        <p>Amount enclosed: ___________</p>
+      </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.djhtml' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+
+<p>This project was presented in <a href="http://brainimaging.waisman.wisc.edu/~fox/publications/foxAS_CNS_2011_reprint.pdf">a poster at CNS 2011</a>.
+</p>
+
+<p>
+  In this task you will be making {{ session.total_trials }} choices. Each choice you make will be entered into a drawing. At the end of the experiment, {{ session.total_probings }} choices will be drawn. In the actual version of this experiment, the drawn choices would be paid. Because this is a demo, you will not be paid for your choices. 
+</p>
+<p>
+  Each choice will be between money for yourself or money for another person. The other person would be someone who participates in experiments from our lab, but not necessarily this experiment. In each choice you will be paired with a random person. Neither of you will have any way of knowing the identity of the other person.
+</p>
+<p>
+  After the experiment, we will randomly pick {{ session.total_probings }} of your choices. Because this is a demo, nobody will be paid based on your decisions. In the actual experiment, we would pay money to you and the other people based on those choices. For example, imagine you are given the choice:
+</p>
+
+<p>
+  <button type="button" class="chooser">I get <strong>$5.40</strong></button> -OR- 
+  <button type="button" class="chooser">Other person gets <strong>$9.00</strong></button>
+</p>
+
+<p>
+  If you choose yourself and this choice is drawn in the non-demo game, you would receive $5.40. If you had chosen the Other and this choice was drawn in the non-demo game, then the other person would receive $9.00.</p>
+
+<h3>
+  <a href="{% url offers.views.offer %}">Click here to begin the demonstration task.</a>
+</h3>
+
+{% endblock content %}

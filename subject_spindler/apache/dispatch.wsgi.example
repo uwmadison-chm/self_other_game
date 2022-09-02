@@ -1,0 +1,8 @@
+import os
+
+# Or whatever libraries aren't already in PYTHONPATH
+os.environ['DJANGO_SETTINGS_MODULE'] = 'subject_spindler.settings'
+
+import django.core.handlers.wsgi
+
+application = django.core.handlers.wsgi.WSGIHandler()

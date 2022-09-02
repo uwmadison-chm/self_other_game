@@ -1,0 +1,26 @@
+{% extends 'base.djhtml' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+
+<p>
+  Thank you for piloting the self-other game. We are excited to collect
+  some data and eager to hear any feedback that you might have. After
+  the important note below, you will find the first draft of
+  instructions that will be given to subjects who play this game. Please
+  <a href="mailto:asfox@wisc.edu">let us know</a> if you have any feedback.
+</p>
+
+<h3>Important Note!</h3>
+
+<h3>
+  In the final lab situation, the game will be played
+  with real money. For now, it won't, but pretend it's real, OK?
+</h3>
+  
+<h3>
+  <a href="{% url offers.views.login %}">Let's test some code!</a>
+</h3>
+
+{% endblock content %}

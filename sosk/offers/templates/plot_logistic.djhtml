@@ -1,0 +1,16 @@
+{% extends 'base.djhtml' %}
+{% load offer_tags %}
+
+{% block title %} Self-Other Game : Choice time! {% endblock title %}
+
+{% block content %}
+
+<div class="span-14 prepend-5 last">
+  <p class="meta">
+    <img src="{% url offers.views.plot_logistic_png subject_name=subject.session_and_subject %}" alt="Choice by LogRatio Logisitc Plot" />
+    Indifference Point = {{ subject.indifference_point }} 
+    Completed {{ subject.choice_set.count }} of {{ subject.session.total_trials }} trials.
+  </p>
+</div>
+
+{% endblock content %}

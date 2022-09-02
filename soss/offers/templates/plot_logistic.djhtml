@@ -1,0 +1,15 @@
+{% extends 'base.djhtml' %}
+{% load offer_tags %}
+
+{% block title %} Self-Other Game : Choice time! {% endblock title %}
+
+{% block content %}
+
+<div class="span-14 prepend-5 last">
+  <p class="meta">
+    Indifference Point = {{ subject.indifference_point }} 
+    Completed {{ subject.choice_set.count }} of {{ subject.session.total_trials }} trials.
+  </p>
+</div>
+
+{% endblock content %}

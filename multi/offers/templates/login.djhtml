@@ -1,0 +1,21 @@
+{% extends 'base.djhtml' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+
+<p>
+  To start, enter your subject number.
+</p>
+
+<form action="{% url offers.views.login %}" method="post">
+  <p>
+    <div class="errors">{{ form.subject_number.errors }}</div>
+    <label for="subject_number">Subject number</label>
+    {{ form.subject_number }}
+    
+    <input type="submit" value="I'm ready to play!" />
+  </p>
+  
+</form>
+{% endblock content %}

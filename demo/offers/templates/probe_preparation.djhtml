@@ -1,0 +1,12 @@
+{% extends 'base.djhtml' %}
+
+{% block content %}
+
+<p>In this step, we will randomly pick {{ session.total_probings }} of the {{ session.total_trials }} choices you just made. We will then ask you a few questions about each pick.
+</p>
+
+<p>What you see in this step determines how much you and other players would get paid if you were participating in the actual task.</p>
+
+<h3><a href="{% url offers.views.probe %}">I'm ready! Continue with the fake payouts!</a></h3>
+
+{% endblock content %}

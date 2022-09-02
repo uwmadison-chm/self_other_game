@@ -1,0 +1,26 @@
+{% load base_paths %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% css_prefix %}/screen.css" type="text/css" />
+    <link rel="stylesheet" href="{% css_prefix %}/rev.css" type="text/css" />
+    <script type="text/javascript" src="{% js_prefix %}/prototype.js"> </script>
+    <script type="text/javascript" src="{% js_prefix %}/lowpro.js"> </script>
+    <script type="text/javascript" src="{% js_prefix %}/scriptaculous.js"> </script>
+    <script type="text/javascript" src="{% js_prefix %}/revealer.js"> </script>
+    <script type="text/javascript" src="{% js_prefix %}/scheduler.js"> </script>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <div id="content" class="container span-22 prepend-1 append-1 last">
+        <h1>{{ title }}</h1>
+        
+        {% block content %}
+        Content goes here
+        {% endblock content %}
+      </div>
+    </div>
+  </body>
+</html>

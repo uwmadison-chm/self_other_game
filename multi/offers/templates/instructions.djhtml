@@ -1,0 +1,57 @@
+{% extends 'base.djhtml' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+
+<p>
+  In this task you will be making {{ session.total_trials }} choices. Each choice you make 
+  will be entered into a drawing. At the end of the experiment {{ session.total_probings }} 
+  choicies will be drawn and paid.  </p>
+
+<p>
+  Each choice will be between money for yourself or money for another person who is has similar 
+  or dissimilar values to you. The other person will be someone who participates in experiments 
+  from our lab, but not necessarily this experiment. Neither of you will have any way of knowing 
+  the identity of the other person. </p>
+
+<p>
+  After the experiment, we will randomly pick 10 of your choices and pay money to you and the 
+  other people based on those choices. </p>
+
+<p>
+  On each trial you will be informed of the offer amounts and the similarity of the other person. 
+  “Similarity” will be calculated based on the Wilson-Patterson Issue Battery that you just 
+  completed. Based on that questionnaire we will identify individuals who agree or disagree 
+  with your views on the issues that you considered important or very important. On each choice 
+  you are presented with, you will be paired with a random person who’s similarity is in the 
+  specified range based on the information stored in our database. </p>
+
+<p>
+  For example, on one trial you might be interacting with someone who is between 80% and 100% 
+  similar to you. This person agrees with you on nearly 100% of the items you designated as 
+  important or very important. In contrast, on another trial you might be interacting with 
+  someone who is between 0% and 20% similar to you. This means that this person disagreed with 
+  your opinion on nearly every issue you felt was important or very important. </p>
+
+<p>
+  It is important that you understand the other individuals who will receive payment in this 
+  game are not necessarily in the room now, and may yet to have been selected. If the other is 
+  chosen, the money will go to somebody who responded with the indicated amount of similarity. </p>
+
+<p>
+  For example, imagine you are given the choice:<br/><br/>
+  <button type="button" class="chooser">I get <strong>$5.40</strong></button> -OR- 
+  <button type="button" class="chooser">Other person gets <strong>$9.00</strong></button>
+</p>
+
+<p>
+  If you choose yourself and this choice is drawn, you will receive
+  $5.40. If you had chosen the Other and this choice was drawn, then the
+  other person would receive $9.00.</p>
+
+<h3>
+  <a href="{% url offers.views.offer %}">Click here to begin the task.</a>
+</h3>
+
+{% endblock content %}

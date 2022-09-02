@@ -1,0 +1,12 @@
+{% extends 'base.djhtml' %}
+
+{% block content %}
+
+<p>
+  Thanks for playing!
+</p>
+<p>
+  Please continue to the next tab in your browser.
+</p>
+
+{% endblock content %}

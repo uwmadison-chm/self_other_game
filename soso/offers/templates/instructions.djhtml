@@ -1,0 +1,27 @@
+{% extends 'base.djhtml' %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block content %}
+
+<p>
+  In this task you will be making {{ session.total_trials }} choices. Each choice you make 
+  will be entered into a drawing. At the end of the experiment {{ session.total_probings }} 
+  choicies will be drawn and paid.  </p>
+
+<p>
+  For example, imagine you are given the choice:<br/><br/>
+  <button type="button" class="chooser">I get <strong>$5.40</strong></button> -OR- 
+  <button type="button" class="chooser">Other person gets <strong>$9.00</strong></button>
+</p>
+
+<p>
+  If you choose yourself and this choice is drawn, you will receive
+  $5.40. If you had chosen the Other and this choice was drawn, then the
+  other person would receive $9.00.</p>
+
+<h3>
+  <a href="{% url offers.views.offer %}">Click here to begin the task.</a>
+</h3>
+
+{% endblock content %}

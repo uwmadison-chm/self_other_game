@@ -1,0 +1,31 @@
+{% extends 'base.djhtml' %}
+{% load offer_tags %}
+
+{% block title %} Self-Other Game : Choice time! {% endblock title %}
+
+{% block content %}
+
+<div class="span-14 prepend-5 last">
+  <h2>&nbsp;</h2>
+  
+  <form action = "{% url offers.views.offer %}" method = "post" id="offer_form">
+    {% random_buttons offers %}
+    <input type="hidden" name="timings" id="timings" value="" />
+  </form>
+
+  <p class="meta">
+    Trial {{ subject.choice_set.count }} of {{ subject.session.total_trials }}
+  </p>
+</div>
+
+<script type="text/javascript">
+  Event.addBehavior({
+    'html' : function() { $('timings').value = new Date().getTime()+''; },
+    '#offer_form:submit' : function(e) {
+      $('timings').value = $('timings').value+":"+(new Date().getTime()+'');
+    },
+    '.chooser' : Revealer.Delayed(1500),
+    '#offer_form' : Revealer.SingleSubmit,
+  });
+</script>
+{% endblock content %}

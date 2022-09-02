@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import os
+import sys
+
+# Or whatever libraries aren't already in PYTHONPATH
+sys.path.insert(0, '/var/www/python-libraries')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mygame.settings'
+
+# Switch to the directory of your project. (Optional.)
+os.chdir("/var/www/django/mygame")
+
+from django.core.servers.fastcgi import runfastcgi
+runfastcgi(method="threaded", pidfile="tmp/revealer.pid")

@@ -1,0 +1,17 @@
+{% extends 'base.djhtml' %}
+
+{% block content %}
+
+<p>
+  In this step, the computer will randomly pick {{ session.total_probings }} of the 
+  {{ session.total_trials }} choices you just made. It will then ask you a few
+  questions about each choice.
+</p>
+
+<p>
+  What you see in this step determines how many points you and other players are get.
+</p>
+
+<h3><a href="{% url offers.views.probe %}">I'm ready! Start the payouts!</a></h3>
+
+{% endblock content %}

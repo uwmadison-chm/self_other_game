@@ -1,0 +1,161 @@
+body{
+  background-color: #EAEAFA;
+}
+
+#mybody {
+  font-size: 85%;
+}
+
+#wrapper {
+  background-color: #FCFCFC;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ddd;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  margin-top: 3em;
+}
+
+.important {
+  font-weight: bold;
+}
+
+.chooser {
+  width: 18.5em;
+  color: #444;
+  font-size: 1.1em;
+  height: 3em;
+  border: 1px solid #bbb;
+  background-color: #ddd;
+}
+
+.chooser span {
+  
+}
+
+.chooser strong {
+  color: #000;
+}
+
+.chooser.delayed, .chooser.delayed strong {
+  color: #777;
+}
+
+.question {
+  margin: 1em auto;
+  clear: both;
+  float: left;
+}
+
+.slider, .railend_left, .railend_right {
+  float: left;
+}
+
+.railend_left {
+  margin-left: 3px;
+  width: 3px;
+  height: 5px;
+  background: url("img/rail-left.png");
+  float: left;
+}
+
+form.disabled {
+  color: rgb(128,128,128);
+}
+
+.disabled .railend_left {
+  background: url("img/rail-left-disabled.png");
+}
+
+.rail_middle {
+  float: left;
+  width: 380px;
+  height: 5px;
+  background: url("img/rail.png");
+}
+
+.disabled .rail_middle {
+  background: url("img/rail-disabled.png");
+}
+
+.railend_right {
+  float: left;
+  margin-right: 3px;
+  width: 2px;
+  height: 5px;
+  background: url("img/rail-right.png");
+}
+
+.disabled .railend_right {
+  background: url("img/rail-right-disabled.png");
+}
+
+.slider {
+  margin-left: -3px;
+  width: 391px;
+  height: 5px;
+  margin-bottom: 12px;
+}
+
+.slider .handle {
+  background: url("img/handle-normal.png");
+  width: 17px;
+  height: 20px;
+  top: -4px;
+}
+
+.slider .handle.selected {
+  background: url("img/handle-selected.png");  
+}
+
+.disabled .slider .handle {
+  background: url("img/handle-disabled.png");
+}
+
+.labelset {
+  clear: both;
+}
+
+.labelset label {
+  display: block;
+  float: left;
+  text-align: center;
+  background: url("img/tick.png") no-repeat top center;
+  padding-top: 1em;
+}
+
+.labelset.disabled label {
+  background-image: url("img/tick-disabled.png");
+}
+
+#probe .chooser strong {
+  opacity: 0;
+}
+
+#probe .chooser strong.shown {
+  opacity: 1;
+}
+
+#probe #chosen.shown {
+  background-color: rgb(124, 216, 151);
+}
+
+#probe #notchosen.shown {
+  color: rgb(128, 128, 128);
+}
+
+#probe #notchosen.shown strong {
+  color: inherit;
+}
+
+#probe p {
+  margin-top: 1em;
+}
+
+#probe #result_text {
+  opacity: 0;
+}
+
+#probe #result_text.shown {
+  opacity: 1;  
+}
